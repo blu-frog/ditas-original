@@ -1,0 +1,46 @@
+﻿body 
+{
+    background-color: #663300
+}
+.navigation
+{
+    border: medium ridge #FFFFFF;
+    padding: 10px;
+    vertical-align:top; 
+}
+.center
+{
+    text-align: center;
+}
+.footer
+{
+    color: #99CCCC;
+    font-family: Verdana;
+    font-size: x-small;
+    text-align: center;
+}
+.footerH1
+{
+    font-family: 'Monotype Corsiva';
+    text-align: center;
+    color: #FFCC66;
+}
+.imageLeft
+{
+    float: left;
+    margin: 5px;
+}
+.tableLeftColumn
+{
+    width: 33%; 
+    vertical-align: top;
+}
+.tableCenterColumn
+{
+     width: 33%;
+     vertical-align: top;
+}
+.tableRightColumn
+{
+    vertical-align: top;
+}

@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Ditas.master.cs" Inherits="Ditas" %>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="SHORTCUT ICON" href="favicon.ico" />
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="masterForm" runat="server">
+    <div id="headerContent" class="center">
+            <img alt="Dita's Chocolates Logo" src="Images/DitasLogo_Final.gif" style="width: 432px; height: 252px" />
+     </div>
+     <br/>
+     <div id="topNavigation">
+        <asp:Menu ID="TopMenu" runat="server" BackColor="#663300" Font-Names="Monotype Corsiva" Font-Size="X-Large" ForeColor="#FFCC66" Orientation="Horizontal" StaticSubMenuIndent="10px" Width="100%" CssClass="navigation">
+            <StaticSelectedStyle BackColor="#FFCC66" />
+            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" ItemSpacing="10px" />
+            <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+            <DynamicMenuStyle BackColor="#F7F6F3" />
+            <DynamicItemTemplate>
+                <%# Eval("Text") %>
+            </DynamicItemTemplate>
+            <DynamicSelectedStyle BackColor="#5D7B9D" />
+            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" ItemSpacing="50px" />
+            <StaticHoverStyle ForeColor="#99CCCC" />
+            <Items>
+                <asp:MenuItem NavigateUrl="Default.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/about.aspx" Text="About Dita's" Value="About Dita's"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/contact.aspx" Text="Contact Us" Value="Contact Us"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/directions.aspx" Text="Directions" Value="Directions"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/sitemap.aspx" Text="Sitemap" Value="Sitemap"></asp:MenuItem>
+            </Items>
+        </asp:Menu>
+    </div>
+    <br/>
+    <table width="100%">
+        <tr>
+            <td style="width: 15%; vertical-align: top;" >
+                <div id="leftContent">
+                    <asp:ContentPlaceHolder ID="LeftColumnContent" runat="server">
+                        <asp:Menu ID="LeftMenu" runat="server" BackColor="#663300" Font-Names="Monotype Corsiva" ForeColor="#FFCC66" StaticDisplayLevels="2" CssClass="navigation">
+                            <StaticHoverStyle ForeColor="#99CCCC" />
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/suppliers.aspx" Text="Our Products" Value="Our Products">
+                                    <asp:MenuItem Text="Chocolate Bars" Value="Bars" NavigateUrl="~/BarProducts.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Truffles" Value="Truffles" NavigateUrl="~/TruffleProducts.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Specialty Items" Value="Specialty Items" NavigateUrl="~/SpecialtyProducts.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Baking Chocolate" Value="Baking Chocolate" NavigateUrl="~/BakingProducts.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Drinking Chocolate" Value="Drinking Chocolate" NavigateUrl="~/DrinkingProducts.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Special Orders" Value="Special Orders" NavigateUrl="~/SpecialOrders.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Our Wine" Value="Our Wine" NavigateUrl="~/wine.aspx"></asp:MenuItem>
+                                </asp:MenuItem>
+                            </Items>
+                            <StaticItemTemplate>
+                            <%# Eval("Text") %>
+                            </StaticItemTemplate>
+                        </asp:Menu>
+                    </asp:ContentPlaceHolder>
+                </div>
+            </td>
+            <td style="width: 80%" >
+                <div id="mainContent" style="padding: 10px;">
+                    <asp:ContentPlaceHolder id="mainBody" runat="server">
+                        The Main Content goes here</asp:ContentPlaceHolder>
+                </div>
+            </td>
+        </tr>    
+    </table>    
+    <div id="footerContent" class="footer">
+        <h1><a href="sitemap.aspx" class="footerH1">Sitemap</a></h1>
+        Copyright 2009 - Dita's Chocolates, LLC. All Logos are property of their respective owners and used with permission.
+    </div>
+    </form>
+</body>
+</html>
